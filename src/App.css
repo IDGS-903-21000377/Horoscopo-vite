@@ -1,0 +1,107 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: linear-gradient(135deg, #3f51b5, #9c27b0);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+}
+
+/* Contenedor principal */
+.app {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+/* Título */
+.app h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ffd54f;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* Formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+input[type="date"] {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  background: #050505;
+  color: #ffffff;
+}
+
+/* Botón */
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #ffd54f;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: #ffca28;
+  transform: scale(1.05);
+}
+
+/* Resultado */
+.result {
+  margin-top: 25px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 20px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.result h2 {
+  color: #ffeb3b;
+  margin-bottom: 10px;
+}
+
+.result p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
