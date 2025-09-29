@@ -1,6 +1,20 @@
 import { useState } from "react";
 import "./App.css";
 
+// Diccionario de imágenes para cada signo
+import ariesImg from "./assets/aries.png";
+import tauroImg from "./assets/tauro.png";
+import geminisImg from "./assets/geminni.png";
+import cancerImg from "./assets/cancer.png";
+import leoImg from "./assets/leon.png";
+import virgoImg from "./assets/virgo.png";
+import libraImg from "./assets/libra.png";
+import escorpioImg from "./assets/scorpio.png";
+import sagitarioImg from "./assets/sagitario.png";
+import capricornioImg from "./assets/capri.png";
+import acuarioImg from "./assets/acuario.png";
+import piscisImg from "./assets/picis.png";
+
 function getZodiacSign(date) {
   const m = date.getMonth() + 1;
   const d = date.getDate();
@@ -35,7 +49,23 @@ const messages = {
   Piscis: "Crea algo: tu imaginación está activa.",
 };
 
+const images = {
+  Aries: ariesImg,
+  Tauro: tauroImg,
+  Géminis: geminisImg,
+  Cáncer: cancerImg,
+  Leo: leoImg,
+  Virgo: virgoImg,
+  Libra: libraImg,
+  Escorpio: escorpioImg,
+  Sagitario: sagitarioImg,
+  Capricornio: capricornioImg,
+  Acuario: acuarioImg,
+  Piscis: piscisImg,
+};
+
 function App() {
+  const [name, setName] = useState("");
   const [date, setDate] = useState("");
   const [sign, setSign] = useState("");
 
@@ -50,6 +80,14 @@ function App() {
     <div className="app">
       <h1>✨ Tu Horóscopo ✨</h1>
       <form onSubmit={handleSubmit}>
+        <label>Tu nombre:</label>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+
         <label>Introduce tu fecha de nacimiento:</label>
         <input
           type="date"
@@ -57,13 +95,15 @@ function App() {
           onChange={(e) => setDate(e.target.value)}
           required
         />
-        <button type="submit">Ver mi signo</button>
+
+        <button type="submit">Ver mi horóscopo</button>
       </form>
 
       {sign && (
         <div className="result">
-          <h2>Tu signo zodiacal es: {sign}</h2>
+          <h2>{name}, tu signo zodiacal es: {sign}</h2>
           <p>{messages[sign]}</p>
+          <img src={images[sign]} alt={sign} className="sign-img" />
         </div>
       )}
     </div>

@@ -57,6 +57,12 @@ input[type="date"] {
   background: #050505;
   color: #ffffff;
 }
+.sign-img {
+  margin-top: 1rem;
+  max-width: 200px;
+  border-radius: 10px;
+}
+
 
 /* Botón */
 button {
